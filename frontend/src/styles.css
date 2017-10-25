@@ -1,0 +1,122 @@
+body {
+    font: 15px/1.5 Arial, Helvetica, Sans-Serif;
+    padding: 0;
+    margin: 0;
+    background: #f4f4f4;
+    box-sizing: border-box;
+}
+/* Header */
+header {
+    background: #1dc4e2;
+    color: #ffffff;
+    min-height: 70px;
+    border-bottom: #000;
+}
+header ul {
+    margin: 0;
+    padding: 0;
+}
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+li a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+li a:hover{
+    color: #cccccc;
+}
+nav {
+    float: left;
+    padding: 10px 0 0 50px;
+    margin-top: 10px;
+}
+.logo {
+    float: left;
+}
+.logo h1 {
+    margin-top: 10px;
+}
+/* Section */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+.section {
+    margin-top: 50px;
+    min-height: 420px;
+    text-align: center;
+}
+.section-register {
+    min-height: 470px;
+    text-align: center;
+}
+.btn {
+    height: 38px;
+    background: #1dc4e2;
+    border: 0;
+    padding: 0 20px 0 20px;
+    color: #ffffff;
+}
+.btn:hover {
+    background: #1795ac;
+}
+.column{
+    display: inline-block;
+    min-width: 15%;
+    max-width: 15%;
+    margin-left: 1px;
+    font-size: 12px;
+    text-align: center;
+    border-right: 1px solid #bfbec7
+}
+.c-header {
+    font-weight: bold;
+}
+.column_btn {
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    min-width: 18%;
+}
+.row {
+    background: Gainsboro;
+    margin-top: 1px;
+    height: 40px;
+}
+.input {
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 30%;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: #f4f4f4;
+}
+.btn-input {
+    display: block;
+    margin: auto;
+}
+/* Footer */
+footer {
+    padding: 20px;
+    margin-top: 10px;
+    color: #ffffff;
+    background-color: #1dc4e2;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 97%;
+    position: relative;
+}

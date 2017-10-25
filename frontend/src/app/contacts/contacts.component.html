@@ -1,0 +1,43 @@
+<div class="container" >
+    <div class="row">
+        <div class="column c-header">
+            Name
+        </div>
+        <div class="column c-header">
+            Home phone
+        </div>
+        <div class="column c-header">
+            Address
+        </div>
+        <div class="column c-header">
+            E-mail
+        </div>
+        <div class="column c-header">
+            Cell phone Number
+        </div>
+        <div class="column_btn c-header">
+            Delete/Alter
+        </div>
+    </div>
+    <div class="row" *ngFor="let contact of contacts">
+        <div class="column">
+            {{contact.name}}
+        </div>
+        <div class="column">
+            {{contact.phone_number}}
+        </div>
+        <div class="column">
+            {{contact.address}}
+        </div>
+        <div class="column">
+            {{contact.email}}
+        </div>
+        <div class="column">
+            {{contact.cell_number}}
+        </div>
+        <div class="column_btn">
+            <button class="btn" (click)="delete(contact.id)" type="button">Delete</button>
+            <button class="btn" type="button" [routerLink]="['/api/alter/contact', contact.id]">Alter</button>
+        </div>
+    </div>
+</div>

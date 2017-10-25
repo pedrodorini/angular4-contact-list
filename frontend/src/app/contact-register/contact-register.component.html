@@ -1,0 +1,24 @@
+<section class="section-register">
+    <div class="container">
+        <form  class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div>
+                <input [(ngModel)]="contact.name" class="input" type="text"  formControlName="name" placeholder="Name">
+            </div>
+            <div>
+                <input [(ngModel)]="contact.phone_number" class="input" type="text"  formControlName="phone_number" placeholder="Home phone">
+            </div>
+            <div>
+                <input [(ngModel)]="contact.address" class="input" type="text"  formControlName="address" placeholder="Addres">
+            </div>
+            <div>
+                <input [(ngModel)]="contact.email" class="input" type="email"  formControlName="email" placeholder="E-mail">
+            </div>
+            <div>
+                <input [(ngModel)]="contact.cell_number" class="input" formControlName="cell_number" placeholder="Cell phone number">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-input">Save</button>
+            </div>
+        </form>
+    </div>
+</section>
