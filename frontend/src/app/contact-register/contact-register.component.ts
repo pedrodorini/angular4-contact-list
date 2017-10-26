@@ -4,15 +4,30 @@ import { ContactsService } from '../contacts/contacts.service'
 import { Contact } from '../contacts/contact.model'
 import { ActivatedRoute } from '@angular/router'
 import { NotificationService } from '../shared/messages/notification.service'
+import { trigger, state, style, transition, animate } from '@angular/animations'
 
 @Component({
     selector: 'app-contact-register',
-    templateUrl: './contact-register.component.html'
+    templateUrl: './contact-register.component.html',
+    animations : [
+        trigger('contactRegisterAppeared', [
+            state('ready', style({
+                opacity: 1
+            })),
+            transition('void => ready', [
+                style({
+                    opacity: 0,
+                    transform: 'translate( -40px)'
+                }), animate('500ms 0s ease-in-out')
+            ])
+        ])
+    ]
 })
 
 @Injectable()
 export class ContactRegisterComponent implements OnInit {
 
+    contactRegisterState = 'ready'
     contact : Contact = {
         id : null,
         name : '',

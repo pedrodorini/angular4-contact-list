@@ -1,5 +1,5 @@
-<section class="section">
-    <div class="container" *ngIf="contacts.length !== 0">
+<section class="section" [@contactsAppeared]="contactsState">
+    <div class="container" *ngIf="hasContacts">
         <div class="row" >
             <div class="column c-header">
                 Name
@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div class="container" *ngIf="contacts.length === 0 ">
+    <div class="container" *ngIf="!hasContacts">
         <h2>Seems like you don't have any contacts yet.</h2>
         <p>Click the button down below to add some :)</p>
         <button class="btn" [routerLink]="['/api/add/contact']">Add contacts</button>
