@@ -13,7 +13,7 @@ import { NotificationService } from '../shared/messages/notification.service'
 @Injectable()
 export class ContactsComponent implements OnInit {
 
-    contacts: Contact[]
+    contacts: Contact[] = []
 
     constructor(private contactsService: ContactsService,
                 private notificationService: NotificationService) {}
