@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { ContactsService } from '../contacts/contacts.service'
 import { Contact } from '../contacts/contact.model'
 import { ActivatedRoute } from '@angular/router'
+import { NotificationService } from '../shared/messages/notification.service'
 
 @Component({
     selector: 'app-contact-register',
@@ -25,7 +26,8 @@ export class ContactRegisterComponent implements OnInit {
 
     constructor(private formBuilder: FormBuilder,
                 private contactsService : ContactsService,
-                private router: ActivatedRoute) {}
+                private router: ActivatedRoute,
+                private notificationService: NotificationService) {}
 
         ngOnInit() {
             this.form = this.formBuilder.group({
@@ -43,10 +45,16 @@ export class ContactRegisterComponent implements OnInit {
         onSubmit(){
             const body = this.contact
             if (this.loaded) {
-                this.contactsService.alterContact(body).subscribe(contact => console.log(contact))
+                this.contactsService.alterContact(body).subscribe(contact => {
+                    console.log(contact)
+                    this.notificationService.notify(`Contact altered successfully!`)
+                })
                 this.loaded = false
             } else {
-                this.contactsService.addContact(body).subscribe(contact => console.log(contact))
+                this.contactsService.addContact(body).subscribe(contact => {
+                    console.log(contact)
+                    this.notificationService.notify(`Contact added successfully!`)
+                })
             }
             this.clearFields()
         }

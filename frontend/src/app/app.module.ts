@@ -11,6 +11,9 @@ import { ContactsService } from './contacts/contacts.service';
 import { ContactRegisterComponent } from './contact-register/contact-register.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { SnackbarComponent } from './shared/messages/snackbar/snackbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NotificationService } from './shared/messages/notification.service'
 
 @NgModule({
   declarations: [
@@ -19,16 +22,18 @@ import { FooterComponent } from './footer/footer.component';
     SectionComponent,
     ContactsComponent,
     ContactRegisterComponent,
-    FooterComponent
+    FooterComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ContactsService],
+  providers: [ContactsService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

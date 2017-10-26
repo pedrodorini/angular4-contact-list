@@ -2,6 +2,7 @@ import { Component, OnInit, Injectable, Input } from '@angular/core';
 import { Contact } from './contact.model'
 import { ContactsService } from './contacts.service'
 import { Observable } from 'rxjs/Observable'
+import { NotificationService } from '../shared/messages/notification.service'
 
 
 @Component({
@@ -14,7 +15,8 @@ export class ContactsComponent implements OnInit {
 
     contacts: Contact[]
 
-    constructor(private contactsService: ContactsService) {}
+    constructor(private contactsService: ContactsService,
+                private notificationService: NotificationService) {}
 
 
         ngOnInit() {
@@ -32,6 +34,7 @@ export class ContactsComponent implements OnInit {
         delete(id: number): void {
             this.contactsService.deleteContact(id).subscribe(contact => {
                 this.loadContacts()
+                this.notificationService.notify(`Contact deleted successfully!`)
             })
         }
     }
